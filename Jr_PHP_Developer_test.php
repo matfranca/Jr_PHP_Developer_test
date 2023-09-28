@@ -1,45 +1,39 @@
 <?php
-// Prime number challenge
-echo "Prime number challenge: \n";
-function Is_Prime($number) {
-  if ($number < 1)
-    return "Your number is not prime";
-  else
-    for ($i = 2; $i <= $number/2; $i++) {
-      if ($number%$i == 0){
-        return "Your number is not prime";
-      }
-    }
-  return "Your number is prime";
-}
 
-$number = readline("Insert a positive number: ");
+// Largest number challenge
+echo "Largest number challenge: \n";
+
+$numbers = array(29, 57, 12, 83, 41, 68, 5, 74);
+$largestNumber = 0;
+
+foreach($numbers as  &$number)
+  if ($number > $largestNumber){
+    $largestNumber = $number;
+  }
   
-echo Is_Prime($number);
+echo $largestNumber;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// Palindrome word challenge
-echo "\nPalindrome word challenge: \n";
+//Longest name challenge
+echo "\nLongest name challenge: \n";
 
-$word = readline("Enter a word to check is a palindome or not:");
+$names = array("Emily", "Benjamin", "Sophia", "Alexander", "Olivia", "William", "Mia", "Samuel");
+$longestName = "";
 
-if (strrev($word) == $word)
-echo "The word is a palindrome";
-else 
-echo "The word is not a palindrome";
+foreach($names as  &$name)
+  if (strlen($name) > strlen($longestName)){
+    $longestName = $name;
+  }
+
+echo $longestName;
 
 ////////////////////////////////////////////////////////////////////////////////
 
-// Leap year challenge
-echo "\nLeap year challenge: \n";
+// Sum of elements challenge
+echo "Sum of elements challenge: \n";
 
-$year = readline("Enter a year: ");
-
-if (($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0)) {
-  echo "Is a leap year";
-} else {
-  echo "Is not a leap year";
-}
+$numbers = array(29, 57, 12, 83, 41, 68, 5, 74);
+echo array_sum($numbers);
 
 ?>
